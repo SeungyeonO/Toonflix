@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/webtoon_episode_model.dart';
+import 'package:flutter_application_1/theme/colors.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class Episode extends StatelessWidget {
@@ -19,6 +20,14 @@ class Episode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String title = ' ';
+    bool long = false;
+    if (episode.title.length > 24) {
+      title = episode.title.substring(0, 24);
+      long = true;
+    } else {
+      title = episode.title;
+    }
     return GestureDetector(
       onTap: onButtonTap,
       child: Container(
@@ -28,7 +37,7 @@ class Episode extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(
             width: 1.5,
-            color: Colors.green.shade400,
+            color: darkGray,
           ),
           borderRadius: BorderRadius.circular(20),
         ),
@@ -41,12 +50,12 @@ class Episode extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                episode.title,
-                style: const TextStyle(
-                  color: Colors.green,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
+                (long) ? '$title...' : title,
+                style: TextStyle(
+                    color: darkGray,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'ScoreDream4'),
               ),
               const Icon(
                 Icons.chevron_right_rounded,

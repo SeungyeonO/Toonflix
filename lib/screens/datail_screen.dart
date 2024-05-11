@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/webtoon_episode_model.dart';
 import 'package:flutter_application_1/models/webtoon_detail_model.dart';
 import 'package:flutter_application_1/services/api_service.dart';
+import 'package:flutter_application_1/theme/colors.dart';
 import 'package:flutter_application_1/widgets/episode_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -63,7 +64,7 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: neonGreen,
       appBar: AppBar(
         actions: [
           IconButton(
@@ -73,15 +74,17 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
           ),
         ],
-        foregroundColor: Colors.green,
-        surfaceTintColor: Colors.white,
-        shadowColor: Colors.black,
+        backgroundColor: darkGray,
+        foregroundColor: neonGreen,
+        surfaceTintColor: neonGreen,
+        shadowColor: darkGray,
         elevation: 3.0,
         centerTitle: true,
         title: Text(
           widget.title,
           style: const TextStyle(
             fontSize: 23,
+            fontFamily: 'ScoreDream7',
           ),
         ),
       ),
@@ -133,8 +136,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         Text(
                           snapshot.data!.about,
                           style: const TextStyle(
-                            fontSize: 15,
-                          ),
+                              fontSize: 15, fontFamily: 'ScoreDream4'),
                         ),
                         const SizedBox(
                           height: 10,
