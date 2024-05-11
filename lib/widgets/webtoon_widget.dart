@@ -54,9 +54,10 @@ class Webtoon extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
                     BoxShadow(
-                      blurRadius: 12,
-                      offset: const Offset(10, 10),
-                      color: Colors.black.withOpacity(0.5),
+                      blurRadius: 20,
+                      offset: const Offset(0, 0),
+                      color: const Color.fromARGB(255, 21, 255, 169)
+                          .withOpacity(0.5),
                     )
                   ]),
               child: Image.network(
@@ -68,13 +69,14 @@ class Webtoon extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 30,
           ),
           Text(
             title,
             style: const TextStyle(
+              color: Color.fromARGB(255, 21, 255, 169),
               fontSize: 22,
-              fontWeight: FontWeight.w300,
+              fontFamily: 'ScoreDream7',
             ),
           ),
         ],
